@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    error = None
     if request.method == 'POST':
         # take data from post and call function
         api = PVWattsV6(
@@ -27,8 +28,8 @@ def index():
             output = OutputFormatter(data)
             output.write_csv()
             return render_template('display.html', table=data)
-    return render_template('index.html') 
-
-@app.route('/info')
-def display():
-    return 'display'
+        elsif status_code == 422:
+            error = data
+        else:
+            error = "Oops something bad happened, try again!"
+    return render_template('index.html', error) 
