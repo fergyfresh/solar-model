@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <form method="post">
+        <p>Latitude(-90 to 90):<br><input type=text name=lat>
+        <p>Longitude(-180 to 180):<br><input type=text name=lon>
+        <p>Array Type(0-Fixed-Open Rack, 1-Fixed-Roof Mounted):<br><input type=text name=array_type>
+        <p>Tilt(0 to 90):<br><input type=text name=tilt>
+        <p>Azimuth(0 to < 360):<br><input type=text name=azimuth>
+        <p>Module Type(0-Standard, 1-Premium, 2-Thin-Film):<br><input type=text name=module_type>
+        <p>Losses(-5 to 99%):<br><input type=text name=losses>
+        <p>System Capacity(0.05 to 500000kW):<br><input type=text name=system_capacity>
+        <p>Rate Type(Residential/Commercial):<br><input type=text name=rate_type>
+        <p>Rate($):<br><input type=text name=rate>
+        <p><input type=submit value=Submit>
+    </form>
+</div>
+{% endblock %}
