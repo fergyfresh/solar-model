@@ -28,7 +28,7 @@ def index():
             output = OutputFormatter(data)
             output.write_csv()
             return render_template('display.html', table=data)
-        elsif status_code == 422:
+        elif status_code == 422:
             error = data
         else:
             error = "Oops something bad happened, try again!"
