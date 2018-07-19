@@ -2,6 +2,9 @@
 
 {% block content %}
 <div>
+    {% if error %}
+      <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
     <form method="post">
         <p>Latitude(-90 to 90):<br><input type=text name=lat>
         <p>Longitude(-180 to 180):<br><input type=text name=lon>
