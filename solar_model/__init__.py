@@ -32,4 +32,4 @@ def index():
             error = data
         else:
             error = "Oops something bad happened, try again!"
-    return render_template('index.html', error) 
+    return render_template('index.html', error=error) 
